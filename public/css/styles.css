@@ -1,0 +1,46 @@
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.h21 {
+  background: -webkit-linear-gradient(#eee, #f8f5f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer {
+  background-size: contain;
+  bottom: 0;
+  margin-top: auto;
+}
+
+main {
+  margin-top: 20vh;
+}
+
+header {
+  margin-bottom: 20vh;
+}
+
+.btn {
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+.box {
+  margin: auto;
+  width: 50%;
+  border: 3px solid white;
+  padding: 10px;
+}
+
+.inputbmi {
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5em;
+}
