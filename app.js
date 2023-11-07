@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
+//const path = require("path");
+
 const app = express();
 
 app.set("view engine", "ejs");
@@ -16,7 +18,7 @@ app.get("/", function (request, respond) {
 });
 
 app.get("/bmicalc", function (request, respond) {
-  respond.render("bmicalc");
+  respond.sendFile(__dirname + "/bmicalc.html");
 });
 
 app.post("/", function (request, respond) {
