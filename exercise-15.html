@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise #15 || Animated logo</title>
+
+    <!-- Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    />
+
+    <style>
+      .container {
+        display: grid;
+        width: 100%;
+        height: 100vh;
+        place-content: center;
+        background-color: #f6e9fe;
+      }
+
+      /* Air */
+      svg polyline {
+        stroke-linecap: round;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Air -->
+
+      <svg
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-activity"
+      >
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+      </svg>
+    </div>
+
+    <!-- Air -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/TextPlugin.min.js"></script>
+
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/EasePack.min.js"></script>
+    <script>
+      gsap.set("polyline", {
+        scale: 0,
+        transformOrigin: "50% 50%",
+      });
+
+      //timeline
+      let tl = gsap.timeline({
+        repeat: -1,
+        repeatDelay: 1.6,
+        yoyo: true,
+      });
+
+      /*  gsap.to("polyline", {
+        scale: 1,
+        rotation: 360,
+        duration: 1.2,
+        ease: "elastic.out",
+      }); */
+      tl.to("polyline", {
+        scale: 1,
+        rotation: 360,
+        duration: 1.2,
+      });
+
+      tl.fromTo(
+        "",
+        {
+          drawSVG: "100% 100%",
+        },
+        {
+          drawSVG: "0% 100%",
+          duration: 1.2,
+          ease: "power4.inOut",
+        }
+      );
+      //change color
+      tl.to("polyline", {
+        stroke: "#A41FF6",
+        duration: 0.4,
+      });
+    </script>
+  </body>
+</html>

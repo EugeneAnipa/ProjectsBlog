@@ -20,6 +20,12 @@ app.get("/", function (request, respond) {
 app.get("/bmicalc", function (request, respond) {
   respond.sendFile(__dirname + "/bmicalc.html");
 });
+app.get("/second", function (request, respond) {
+  respond.sendFile(__dirname + "/animatedweb.html");
+});
+app.get("/exercise1", function (request, respond) {
+  respond.sendFile(__dirname + "/exercise-1.html");
+});
 
 app.post("/", function (request, respond) {
   respond.render("");
